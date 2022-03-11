@@ -1,0 +1,142 @@
+@import "/src/assets/scss/shared";
+
+.nav {
+    @include display-flex {
+        align-items: center;
+        flex-basis: 0;
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    &__wrapper {
+        @include display-flex {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-primary;
+            height: 60px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    }
+
+    &__top {
+        @include display-flex;
+        align-items: center;
+    }
+}
+
+.menu {
+    @include display-flex(column) {
+        top: 0;
+        width: 256px;
+        background-color: $color-primary;
+        position: fixed;
+        height: 100vh;
+        left: -100vw;
+    }
+  
+    &--opened {
+      left: 0;
+    }
+  
+    &__top {
+      @include display-flex(column) {
+        position: relative;
+        height: 60px;
+      }
+    }
+
+    &__main {
+        @include display-flex(column);
+        align-items: center;
+    }
+
+    &__item {
+        transition-duration: unset;
+        @include display-flex(row);
+        position: relative;
+        height: 60px;
+        width: 100%;
+        font-size: 18px;
+        line-height: 24px;
+        color: $color-secondary;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            width: 30px;
+            height: auto;
+            * {
+                fill: $color-secondary;
+            }
+        }
+
+        &:hover {
+            background-color: $color-main;
+            color: $color-white;
+        }
+
+        &--active {
+            background-color: $color-main;
+            color: $color-white;
+            svg * {
+                fill: $color-white;
+                stroke: $color-white;
+            }
+        }
+        
+        &__icon {
+            transition-duration: unset;
+            width: 30px;
+            @include display-flex {
+                align-items: center;
+                margin: 0px 25px 0px 25px;
+                svg * {
+                    stroke-width: .1px;
+                }
+            }
+        }
+        
+        &__bottom {
+            @include display-flex(column) {
+                position: relative;
+                margin-top: auto;
+                padding: 50px 0;
+            }
+        }
+    }
+
+}
+
+.button {
+    height: 100%;
+    &__close {
+        position: absolute;
+        top: 14px;
+        right: 8px;
+        svg {
+            height: 45px;
+            width: auto;
+        }
+        svg * {
+          fill: $color-secondary;
+        }
+      }
+    &__menu {
+        position: absolute;
+        left: 28px;
+        svg {
+            height: 45px;
+            width: auto;
+        }
+        svg * {
+          fill: $color-secondary;
+        }
+    }
+    
+}

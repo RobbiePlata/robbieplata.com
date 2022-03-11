@@ -1,0 +1,133 @@
+@import "/src/assets/scss/shared";
+
+.nav {
+  @include display-flex(column) {
+    transition-duration: $transition-duration;
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    z-index: 10;
+    background-color: $color-primary;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow-y: auto;
+    justify-content: space-between;
+  }
+
+  &--opened {
+    width: 256px;
+    height: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+  }
+
+  &__toggle {
+    height: 40px;
+    align-items: center;
+    @include display-flex {
+      justify-content: right;
+      cursor: pointer;
+      transition: unset;
+      margin-right: 25px;
+      &--opened {
+        width: 100%;
+        margin-right: 0px;
+        justify-content: center;
+      }
+      svg {
+        width: 25px;
+        height: 25px;
+        * {
+          fill: $color-secondary;
+          stroke: $color-secondary;
+        }
+        &:hover {
+          * {
+            transition: unset;
+            fill: $color-white;
+            stroke: $color-white;
+          }
+        }
+      }
+    }
+  }
+
+  &__logo {
+    @include display-flex {
+      justify-content: center;
+      color: $color-white;
+      margin: 10px auto 30px;
+    }
+    svg {
+      width: auto;
+      height: 30px;
+    * {
+        fill: $color-primary;
+      }
+    }
+  }
+
+  &__main {
+    @include display-flex(column);
+  }
+
+  &__item {
+    @include display-flex {
+      position: relative;
+      height: 60px;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      color: $color-secondary;
+      cursor: pointer;
+    }
+    
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-white;
+      svg * {
+        fill: $color-white;
+        stroke: $color-white;
+      }
+    }
+
+    &--active {
+      background-color: $color-main;
+      color: $color-white;
+      svg * {
+          fill: $color-white;
+          stroke: $color-white;
+      }
+    }
+    
+    &__icon {
+      width: 30px;
+      height: 30px;
+      transition-duration: unset;
+      @include display-flex {
+        align-items: center;
+        margin: 0px 25px 0px 25px;
+      }
+    }
+  }
+
+  &__bottom {
+    @include display-flex {
+      position: relative;
+      justify-content: flex-start;
+      align-items: flex-end;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      color: $color-secondary;
+      cursor: pointer;
+      margin: 0 0 40px 0;
+    }
+  }
+}

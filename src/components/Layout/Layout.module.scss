@@ -1,0 +1,38 @@
+@use "sass:map";
+@import "/src/assets/scss/shared";
+
+.layout {
+    position: relative;
+    width: 100%;
+  
+  .main {
+    width: 100%;
+    min-height: 600px;
+    &_wrapper {
+      transition-duration: $transition-duration;
+      @include display-flex;
+      min-height: 100vh;
+      margin: 0 0 auto 256px;
+      width: calc(100% - 256px);
+      
+      &_collapse {
+        margin: 0 0 auto 80px;
+        width: calc(100% - 80px);
+      }
+      
+      @include media-breakpoint-down("lg") {
+        width: calc(100% - 256px);
+        padding-top: 60px;
+        &_collapse {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  .page_container {
+    margin-top: 28px;
+  }
+}
+  

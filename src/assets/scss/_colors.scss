@@ -1,0 +1,28 @@
+@use "sass:map";
+
+$color-darker: #292c35;
+$color-dark: #333943;
+$color-light: #747882;
+$color-react-blue: #61DBFB;
+
+$color-white: #fff;
+$color-black: #000;
+$color-main: $color-darker;
+$color-primary: $color-dark;
+$color-secondary: $color-light;
+$color-hyperlink: $color-react-blue;
+
+$color-darkgray: #707070;
+$color-warning: #b9bbb2;
+
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
+
+:export {
+    colorMain: $color-main;
+    colorBlack: $color-black;
+    colorSecondary: $color-secondary;
+    colorHyperlink: $color-hyperlink;
+    colorWhite: $color-white;
+    colorLightgray: $color-light;
+}

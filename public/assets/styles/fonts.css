@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "FugazOne-Regular";
+  src: url('/assets/fonts/FugazOne/FugazOne-Regular.ttf');
+  font-weight: 400;
+  font-style: regular;
+}
+
+@font-face {
+  font-family: "Lobster-Regular";
+  src: url("/assets/fonts/Lobster/Lobster-Regular.ttf");
+  font-weight: 400;
+  font-style: regular;
+}

@@ -1,0 +1,101 @@
+@import "/src/assets/scss/shared";
+
+
+
+.home_page {
+    @include display-flex(column) {
+        align-items: center;
+        justify-content: center;
+        row-gap: 30px;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__header {
+        &_title {
+            @include display-flex(column) {
+                align-items: center;
+                justify-content: space-around;
+            }
+            font-family: "FugazOne-Regular";
+            font-weight: bold;
+            text-align: center;
+            color: $color-white;
+            line-height: 1;
+            font-size: 100px;
+            height: 100px;
+
+            @include media-breakpoint-up("xs") {
+                height: 50px;
+                font-size: 52px;
+            }
+            @include media-breakpoint-up("md") {
+                height: 60px;
+                font-size: 76px;
+            }
+            @include media-breakpoint-up("xl") {
+                height: 70px;
+                font-size: 90px;
+            }
+            
+            
+        }
+        &_info {
+            @include display-flex(column) {
+                align-items: center;
+            }
+            &_description {
+                font-family: "FugazOne-Regular";
+                font-weight: bold;
+                text-align: center;
+                color: $color-white;
+                @include media-breakpoint-up("xs") {
+                    font-size: 28px;
+                }
+                @include media-breakpoint-up("md") {
+                    font-size: 38px;
+                }
+                @include media-breakpoint-up("xl") {
+                    font-size: 44px;
+                }
+            }
+    
+            &_links {
+                
+                display: flex;
+                flex-direction: row;
+                &__dark {
+                    svg * {
+                        fill: $color-dark;
+                    }
+                }
+
+                a {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 5px;
+                    @include media-breakpoint-up("xl") {
+                        width: 50px;
+                        height: 50px;
+                    }
+   
+                }
+                svg {
+                    height: 100%;
+                    width: 100%;
+                    color: white;
+                    fill: $color-white;
+                }
+                
+            }
+        }
+    }
+}
+
+.dark {
+    color: $color-dark;  
+    svg * {
+        fill: $color-dark;
+    }
+}
